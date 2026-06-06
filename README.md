@@ -233,14 +233,3 @@ Eventos ficam *pendentes* no agregado (`AggregateRoot.consumirEventos()`) e são
 ## 9. Repositórios
 
 Definidos como **interfaces no domínio** (`SateliteRepository`, `RegiaoRepository`, `EventoClimaticoRepository`) e implementados na infraestrutura. As implementações atuais são in-memory (`InMemory*Repository`), com dados **mockados** via `HashMap` — não há banco real. Como o domínio depende apenas da interface, trocar a persistência no futuro não exige alterar nenhuma classe de domínio.
-
----
-
-## 10. Aderência ao briefing do professor
-
-| Critério                                                                                  | Onde está                                                                                                          |
-| ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| Aderência ao briefing GS (10%) — domínio coerente com OrbitaSafe                          | Todo o código modela satélites, sensores, regiões, eventos, observações e alertas dentro do contexto OrbitaSafe    |
-| Modelo DDD (30%) — Entities, VOs, Aggregates, Domain Services, Events, BCs                | Seções 3–8 deste README                                                                                            |
-| Implementação Java (40%) — código limpo, boas práticas                                    | Factory methods, agregados com invariantes, VOs imutáveis com validação, separação `domain`/`application`/`infrastructure`, repositórios via interface |
-| Integração com o projeto do grupo (20%) — DDD aplicado direto à solução em construção     | Mesmo domínio, mesmas regras de negócio e mesmas entidades que o grupo está desenvolvendo nas outras matérias      |
