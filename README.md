@@ -10,7 +10,12 @@ Implementação em **Domain-Driven Design** do sistema **OrbitaSafe**, a soluç�
 
 Requer **JDK 17+** (testado em OpenJDK 25).
 
+> ⚠️ **Confirme a versão antes de compilar.** O projeto usa `record` e pattern matching, que exigem **Java 16+**. Em **Java 11 ou anterior a compilação falha** com erros do tipo `class, interface, or enum expected`. Rode `javac -version` e garanta que o resultado é **≥ 17** — se for menor, aponte o `JAVA_HOME`/PATH para uma JDK 17+ antes de continuar.
+
 ```bash
+# Verifique a versão (deve ser >= 17)
+javac -version
+
 # A partir da pasta java/
 javac -d out -encoding UTF-8 $(find src/main/java -name "*.java")
 java -cp out -Dfile.encoding=UTF-8 br.com.fiap.orbitasafe.Main
